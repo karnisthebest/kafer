@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace kafer_house.Migrations
 {
-    public partial class ca1 : Migration
+    public partial class c6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

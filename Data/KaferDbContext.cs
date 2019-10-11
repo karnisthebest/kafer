@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using kafer_house.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
+
 namespace kafer_house.Data
 {
    public class KaferDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, int>
@@ -18,8 +19,8 @@ namespace kafer_house.Data
       
 
       
-      public DbSet<Manager> Manager { get; set; }
-      public DbSet<Staff> Staff { get; set; }
+      // public DbSet<Manager> Manager { get; set; }
+      // public DbSet<Staff> Staff { get; set; }
  
       protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
