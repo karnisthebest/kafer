@@ -29,133 +29,9 @@ namespace kafer_house.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ProductLoss(DateTime dateFrom, DateTime dateTo) 
-        {
-                
-                
-                var Receive = await  _context.Receive
-                                        .Include(x => x.shoppingmall)
-                                        .Include(x => x.branch)
-                                        .Include(x => x.receiveItem)
-                                        .Where(x => x.receiveDate.Date >= dateFrom.Date && x.receiveDate.Date <= dateTo.Date)
-                                        .ToListAsync();
-
-                var receiveGroup = from receiveitems in Receive
-                                    group receiveitems by new {receiveitems.shoppingmall.name, receiveitems.branch.branchName} into eGroup
-                                    orderby eGroup.Key.name, eGroup.Key.branchName
-                                    select new ProductLossView
-                                    {
-                                        ShoppingMall = eGroup.Key.name,
-                                        Branch = eGroup.Key.branchName,
-                                        receiveItems = eGroup.OrderBy(x => x.receiveId)
-                                                    .Select(b => b.receiveItem)
-                                                    .SelectMany(item => item)
-                                                    .Distinct()
-                                                    .ToArray()
-                                                    .GroupBy(d => d.productName)
-                                                          .Select(d => new ProductLoss{
-                                                              productName = d.Key,
-                                                              productReceived  = d.Sum(y => y.productQty)
-                                                          })
-                                    };
-
-                var delivery = await  _context.Delivery
-                                        .Include(x => x.shoppingmall)
-                                        .Include(x => x.branch)
-                                        .Include(x => x.deliveryItem)
-                                        .Where(x => x.deliveryDate.Date >= dateFrom.Date && x.deliveryDate.Date <= dateTo.Date && !string.IsNullOrEmpty(x.staffName))
-                                        .ToListAsync();
-
-                 var deliveryGroup = from deliItems in delivery
-                                    group deliItems by new {deliItems.shoppingmall.name, deliItems.branch.branchName} into eGroup
-                                    orderby eGroup.Key.name, eGroup.Key.branchName
-                                    select new ProductLossView
-                                    {
-                                        ShoppingMall = eGroup.Key.name,
-                                        Branch = eGroup.Key.branchName,
-                                        deliveryItems = eGroup.OrderBy(x => x.deliveryId)
-                                                    .Select(b => b.deliveryItem)
-                                                    .SelectMany(item => item)
-                                                    .Distinct()
-                                                    // .ToArray()
-                                                    .GroupBy(d => d.productName)
-                                                          .Select(d => new ProductLoss{
-                                                              productName = d.Key,
-                                                              productSent = d.Sum(y => y.managerProductQty)
-                                                          })
-                                        
-                                    };
-
-                var actual = await  _context.CartActual
-                                        .Include(x => x.shoppingmall)
-                                        .Include(x => x.branch)
-                                        .Include(x => x.cartItems)
-                                        .Where(x => x.dateSold.Date >= dateFrom.Date && x.dateSold.Date <= dateTo.Date)
-                                        .ToListAsync();
-
-                var actualGroup = from actualitems in actual
-                                    group actualitems by new {actualitems.shoppingmall.name, actualitems.branch.branchName} into eGroup
-                                    orderby eGroup.Key.name, eGroup.Key.branchName
-                                    select new ProductLossView
-                                    {
-                                        ShoppingMall = eGroup.Key.name,
-                                        Branch = eGroup.Key.branchName,
-                                        actualItems = eGroup.OrderBy(x => x.cartId)
-                                                    .Select(b => b.cartItems)
-                                                    .SelectMany(item => item)
-                                                    .Distinct()
-                                                    .ToArray()
-                                                    .GroupBy(d => d.productName)
-                                                          .Select(d => new ProductLoss{
-                                                              productName = d.Key,
-                                                              productActual  = d.Sum(y => y.productQty)
-                                                          })
-                                    };
-                
-           
-                List<ProductLossView> list1 = new List<ProductLossView>();
-                list1.AddRange(deliveryGroup);
-                list1.AddRange(receiveGroup);
-                list1.AddRange(actualGroup);
 
 
-                var merged =    list1
-                                .GroupBy(x => new {x.ShoppingMall, x.Branch})
-                                .Select(g => new {
-                                    ShoppingMall = g.Key.ShoppingMall,
-                                    Branch       = g.Key.Branch,
-                                    AllItems = g.Select(d => d.deliveryItems).Where(e => e != null)
-                                                .Concat(g.Select(d => d.receiveItems).Where(e => e != null))
-                                                .Concat(g.Select(d => d.actualItems).Where(e => e != null))
-                                                .SelectMany(item => item)
-                                                .Distinct()
-                                                .GroupBy(z => z.productName)
-                                                          .Select(h => new ProductLoss{
-                                                              productName = h.Key,
-                                                              productSent = h.Sum(y => y.productSent),
-                                                              productReceived = h.Sum(y => y.productReceived),
-                                                              productActual = h.Sum(y => y.productActual),
-                                                              productLoss = h.Sum(y => y.productSent) - h.Sum(y => y.productReceived) - h.Sum(y => y.productActual),
-                                                          })
-                                             
-                                });
-           
-            return Json(merged);
-        }
 
-         public async Task<IActionResult> getReceive(DateTime dateFrom, DateTime dateTo) 
-        {
-            
-
-            var receive = await _context.Receive
-                                    .Include(x => x.shoppingmall)
-                                    .Include(x => x.branch)
-                                    .Include(x => x.receiveItem)
-                                    .Where(x => x.receiveDate.Date >= dateFrom.Date && x.receiveDate.Date <= dateTo.Date)
-                                    .ToListAsync();
-
-            return Json(receive);
-        }
         
         // public IActionResult Data(){
 
@@ -206,17 +82,7 @@ namespace kafer_house.Controllers
         // }
 
 
-        public async Task<IActionResult> ActualSalesGraphData(DateTime dateFrom, DateTime dateTo, int branchId, int shoppingmallId)
-        {
-            var CartActual = await _context.CartActual
-                                    .Include(x => x.cartItems)
-                                    .Where(x =>x.dateSold.Date >= dateFrom.Date && x.dateSold.Date <= dateTo.Date)
-                                    .Where(x => x.branchId == branchId && x.shoppingmallID == shoppingmallId)
-                                    .Select(x => x.cartItems)
-                                    .ToListAsync();
-            
-            return Json(CartActual);
-        }
+   
 
        
     }

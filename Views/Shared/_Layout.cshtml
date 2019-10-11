@@ -12,7 +12,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - Kafer</title>
+        <title>@ViewData["Title"] - SW</title>
         <link rel="stylesheet" href="~/assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700" asp-append-version="true">
@@ -47,7 +47,7 @@
                                 <span class="text-white-75">D</span><span class="text-white">x</span>
                             </span>
                             <span class="smini-hidden">
-                                <span class="text-white-75">Kafer</span><span class="text-white">House</span>
+                                <span class="text-white-75">SW</span>
                             </span>
                         </a>
                         <!-- END Logo -->
@@ -90,38 +90,9 @@
                                     <span class="nav-main-link-name">Product</span>
                                 </a>
                             }
-                            @if (User.IsInRole(Roles.Owner) || User.IsInRole(Roles.Admin)){
-                                <a class="nav-main-link" asp-controller="CarPlate" asp-action="Index">
-                                    <i class="nav-main-link-icon si si-cursor"></i>
-                                    <span class="nav-main-link-name">Car</span>
-                                    
-                                </a>
-                                <a class="nav-main-link" asp-controller="ShoppingMall" asp-action="Index">
-                                    <i class="nav-main-link-icon si si-cursor"></i>
-                                    <span class="nav-main-link-name">Shopping Mall</span>
-                                    
-                                </a>
-                                <a class="nav-main-link" asp-controller="Branch" asp-action="Index">
-                                    <i class="nav-main-link-icon si si-cursor"></i>
-                                    <span class="nav-main-link-name">Branch</span>
-                                </a>
-                                
-                                <a class="nav-main-link" asp-controller="CartActual" asp-action="Index">
-                                    <i class="nav-main-link-icon si si-cursor"></i>
-                                    <span class="nav-main-link-name">Actual Sales</span>
-                                    
-                                </a>       
-                            }
 
-                            
-                                <a class="nav-main-link" asp-controller="Delivery" asp-action="Index">
-                                    <i class="nav-main-link-icon si si-cursor"></i>
-                                    <span class="nav-main-link-name">Delivery</span>
-                                </a>
-                                <a class="nav-main-link" asp-controller="Receive" asp-action="Index">
-                                    <i class="nav-main-link-icon si si-cursor"></i>
-                                    <span class="nav-main-link-name">Return</span>
-                                </a>
+
+            
                                 @if (User.IsInRole(Roles.Owner)){
                                 <a class="nav-main-link" asp-controller="User" asp-action="Index">
                                     <i class="nav-main-link-icon si si-cursor"></i>

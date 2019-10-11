@@ -11,24 +11,16 @@ namespace kafer_house.Data
       {
          
       }
-      public DbSet<ShoppingMall> ShoppingMall { get; set; } //this is use to create an reference with table = "Products"
-      public DbSet<Branch> Branch { get; set; }
 
       public DbSet<Product> Product { get; set; }
 
-      public DbSet<CartActual> CartActual { get; set; }
-      public DbSet<CartItemActual> CartItemActual { get; set; }
+      
+      
 
-      public DbSet<Delivery> Delivery { get; set; }
-      public DbSet<DeliveryItem> DeliveryItem { get; set; }
-
-      public DbSet<Receive> Receive { get; set; }
-      public DbSet<ReceiveItem> ReceiveItem { get; set; }
-
+      
       public DbSet<Manager> Manager { get; set; }
       public DbSet<Staff> Staff { get; set; }
-      public DbSet<CarPlate> CarPlate { get; set; }
-
+ 
       protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

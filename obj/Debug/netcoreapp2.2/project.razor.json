@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\karn_\\Documents\\kafer\\kafer_house\\kafer_house.csproj",
+  "FilePath": "c:\\Users\\Pete pc\\Desktop\\kafer - Copy (2)\\kafer_house.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -204,7 +204,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the action method.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Page\" /> is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Action"
@@ -2869,7 +2869,7 @@
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.SpaServices.Prerendering.PrerenderTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.SpaServices",
-        "Documentation": "\n            <summary>\n            A tag helper for prerendering JavaScript applications on the server.\n            </summary>\n        ",
+        "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": false,
         "TagMatchingRules": [
@@ -2898,7 +2898,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            Specifies the path to the JavaScript module containing prerendering code.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "ModuleName"
@@ -2912,7 +2912,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            If set, specifies the name of the CommonJS export that is the prerendering function to execute.\n            If not set, the JavaScript module's default CommonJS export must itself be the prerendering function.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "ExportName"
@@ -2926,7 +2926,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            An optional JSON-serializable parameter to be supplied to the prerendering code.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "CustomDataParameter"
@@ -2940,7 +2940,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The maximum duration to wait for prerendering to complete.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "TimeoutMillisecondsParameter"
@@ -2966,16 +2966,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\CarPlate\\Index.cshtml",
-      "TargetPath": "Views\\CarPlate\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CarPlate\\Create.cshtml",
-      "TargetPath": "Views\\CarPlate\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\User\\Delete.cshtml",
       "TargetPath": "Views\\User\\Delete.cshtml",
       "FileKind": "mvc"
@@ -2986,11 +2976,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\CarPlate\\Edit.cshtml",
-      "TargetPath": "Views\\CarPlate\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -2998,11 +2983,6 @@
     {
       "FilePath": "Views\\Product\\Edit.cshtml",
       "TargetPath": "Views\\Product\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\ShoppingMall\\Edit.cshtml",
-      "TargetPath": "Views\\ShoppingMall\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3026,28 +3006,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\CartActual\\Edit.cshtml",
-      "TargetPath": "Views\\CartActual\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Receive\\Index.cshtml",
-      "TargetPath": "Views\\Receive\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Product\\Delete.cshtml",
       "TargetPath": "Views\\Product\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Branch\\Details.cshtml",
-      "TargetPath": "Views\\Branch\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Receive\\Delete.cshtml",
-      "TargetPath": "Views\\Receive\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3066,28 +3026,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Branch\\Edit.cshtml",
-      "TargetPath": "Views\\Branch\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Branch\\Index.cshtml",
-      "TargetPath": "Views\\Branch\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\User\\Create.cshtml",
       "TargetPath": "Views\\User\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Delivery\\Index.cshtml",
-      "TargetPath": "Views\\Delivery\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Delivery\\Delete.cshtml",
-      "TargetPath": "Views\\Delivery\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3111,31 +3051,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Receive\\Edit.cshtml",
-      "TargetPath": "Views\\Receive\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CartActual\\Details.cshtml",
-      "TargetPath": "Views\\CartActual\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Delivery\\Edit.cshtml",
-      "TargetPath": "Views\\Delivery\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CartActual\\Index.cshtml",
-      "TargetPath": "Views\\CartActual\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\ShoppingMall\\Delete.cshtml",
-      "TargetPath": "Views\\ShoppingMall\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Shared\\_LayoutLogin.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutLogin.cshtml",
       "FileKind": "mvc"
@@ -3146,28 +3061,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Delivery\\Create.cshtml",
-      "TargetPath": "Views\\Delivery\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Home\\Dashboard.cshtml",
       "TargetPath": "Views\\Home\\Dashboard.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CarPlate\\Details.cshtml",
-      "TargetPath": "Views\\CarPlate\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CarPlate\\Delete.cshtml",
-      "TargetPath": "Views\\CarPlate\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\ShoppingMall\\Create.cshtml",
-      "TargetPath": "Views\\ShoppingMall\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3176,43 +3071,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Branch\\Create.cshtml",
-      "TargetPath": "Views\\Branch\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Delivery\\Details.cshtml",
-      "TargetPath": "Views\\Delivery\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Branch\\Delete.cshtml",
-      "TargetPath": "Views\\Branch\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Receive\\Create.cshtml",
-      "TargetPath": "Views\\Receive\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\ShoppingMall\\Details.cshtml",
-      "TargetPath": "Views\\ShoppingMall\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CartActual\\Create.cshtml",
-      "TargetPath": "Views\\CartActual\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\CartActual\\Delete.cshtml",
-      "TargetPath": "Views\\CartActual\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3221,18 +3081,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\ShoppingMall\\Index.cshtml",
-      "TargetPath": "Views\\ShoppingMall\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Product\\Index.cshtml",
       "TargetPath": "Views\\Product\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Receive\\Details.cshtml",
-      "TargetPath": "Views\\Receive\\Details.cshtml",
       "FileKind": "mvc"
     }
   ],

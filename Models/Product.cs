@@ -13,9 +13,10 @@ namespace kafer_house.Models
         [Required]
         public string name { get; set; }
         
-        [Required]
-        public string code { get; set; }
         
+        public string code { get; set; }
+
+        [Required]
         public double price { get; set; }
 
 

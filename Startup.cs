@@ -19,7 +19,7 @@ namespace kafer_house
 {
     public class Startup
     {
-        // private const string V = "Server=localhost;Database=kafer;User=root;Password=;";
+        private const string V = "Server=localhost;Database=kafer;User=root;Password=;";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
