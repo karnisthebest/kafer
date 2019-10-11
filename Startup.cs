@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace kafer_house
 {
@@ -36,10 +37,19 @@ namespace kafer_house
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            
+            services.AddDbContextPool<KaferDbContext>( // replace "YourDbContext" with the class name of your DbContext
+         options => options.UseMySql(V, // replace with your Connection String
+             mySqlOptions =>
+             {
+                 mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
+            }
+         )
+         );
 
 
-            services.AddDbContext<KaferDbContext>(options =>
-                 options.UseSqlite(Configuration.GetConnectionString("DataContext")));
+            // services.AddDbContext<KaferDbContext>(options =>
+            //      options.UseSqlite(Configuration.GetConnectionString("DataContext")));
 
             // step three add cookies
             services.AddIdentity<ApplicationUser, ApplicationRole>()   
